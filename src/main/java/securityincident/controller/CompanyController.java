@@ -16,8 +16,8 @@ public class CompanyController {
 
     // 기업 전체 조회
     @GetMapping
-    public List<CompanyEntity> companayFindAll(){
-        return companyService.companayFindAll();
+    public List<CompanyEntity> companyFindAll(){
+        return companyService.companyFindAll();
     }
 
     // 기업 등록
@@ -28,15 +28,15 @@ public class CompanyController {
 
     // 기업 수정
     @PutMapping
-    public boolean 수정(@RequestBody CompanyEntity companyEntity){
-        boolean result=companyService.수정(companyEntity);
+    public boolean companyUpdate(@RequestBody CompanyEntity companyEntity){
+        boolean result=companyService.companyUpdate(companyEntity);
         return result;
     }
 
     // 기업 삭제
     @DeleteMapping
-    public boolean 삭제(@RequestParam int companyId){
-        boolean result=companyService.삭제(companyId);
+    public boolean companyDelete(@RequestParam int companyId){
+        boolean result=companyService.companyDelete(companyId);
         return result;
     }
 
