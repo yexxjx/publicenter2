@@ -14,7 +14,7 @@ public class CompanyService {
     @Autowired private CompanyRepository companyRepository;
 
     // 기업 전체 조회
-    public List<CompanyEntity> companayFindAll(){
+    public List<CompanyEntity> companyFindAll(){
         return companyRepository.findAll();
     }
 
@@ -24,7 +24,7 @@ public class CompanyService {
     }
 
     // 기업 수정
-    public boolean 수정(CompanyEntity companyEntity){}
+    public boolean 수정(CompanyEntity companyEntity){return false;}
 
     // 기업 삭제
     public boolean 삭제(int companyId){

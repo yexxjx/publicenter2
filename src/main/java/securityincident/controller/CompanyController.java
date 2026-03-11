@@ -16,8 +16,8 @@ public class CompanyController {
 
     // 기업 전체 조회
     @GetMapping
-    public List<CompanyEntity> companayFindAll(){
-        return companyService.companayFindAll();
+    public List<CompanyEntity> companyFindAll(){
+        return companyService.companyFindAll();
     }
 
     // 기업 등록
