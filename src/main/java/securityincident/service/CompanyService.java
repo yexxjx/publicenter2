@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import securityincident.entity.CompanyEntity;
 import securityincident.repository.CompanyRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,7 +16,18 @@ public class CompanyService {
 
     // 기업 전체 조회
     public List<CompanyEntity> companyFindAll(){
-        return companyRepository.findAll();
+        List<CompanyEntity> companyEntityList = companyRepository.findAll();
+        List<CompanyEntity> companyEntities = new ArrayList<>();
+        companyEntityList.forEach(companyEntity -> {
+            CompanyEntity list = new CompanyEntity();
+            list.setCompanyId(companyEntity.getCompanyId());
+            list.setHeadOffice(companyEntity.getHeadOffice());
+            list.setCompanyName(companyEntity.getCompanyName());
+            list.setFoundedYear(companyEntity.getFoundedYear());
+            list.setIndustryIdName(companyEntity.getIndustryEntity().getIndustryName());
+            list.setIncidentCount(companyEntity.getIncidentCount());
+            companyEntities.add(list);
+        }); return companyEntities;
     }
 
     // 기업 등록
