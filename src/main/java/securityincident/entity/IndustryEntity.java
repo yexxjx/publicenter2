@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 public class IndustryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "industryId")
     private Integer industryId;
-    @Column(nullable = false , length = 50)
+    @Column(name = "industryName", nullable = false, length = 50)
     private String industryName;
 }
