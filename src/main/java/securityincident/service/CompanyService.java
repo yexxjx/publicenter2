@@ -25,8 +25,12 @@ public class CompanyService {
             list.setHeadOffice(companyEntity.getHeadOffice());
             list.setCompanyName(companyEntity.getCompanyName());
             list.setFoundedYear(companyEntity.getFoundedYear());
-            list.setIndustryIdName(companyEntity.getIndustryEntity().getIndustryName());
             list.setIncidentCount(companyEntity.getIncidentCount());
+            if (companyEntity.getIndustryEntity() != null) {
+                list.setIndustryIdName(companyEntity.getIndustryEntity().getIndustryName());
+            } else {
+                list.setIndustryIdName("산업군 미지정");
+            }
             companyEntities.add(list);
         }); return companyEntities;
     }
