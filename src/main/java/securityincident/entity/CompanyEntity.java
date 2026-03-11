@@ -1,9 +1,6 @@
 package securityincident.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Data @Builder
 @Entity @Table(name = "company")
 public class CompanyEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int companyId;
     private String companyName;
     private String headOffice;
