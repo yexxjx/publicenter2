@@ -13,6 +13,6 @@ public class IndustryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "industryId")
     private Integer industryId;
-    @Column(name = "industryName", nullable = false, length = 50)
+    @Column(name = "industryName", length = 50)
     private String industryName;
 }

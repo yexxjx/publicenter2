@@ -24,11 +24,11 @@ public class IncidentEntity extends BaseTime{
     @Column(length = 10)
     private String approvalStatus;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="companyId")
     private CompanyEntity companyEntity;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="industryId")
     private IndustryEntity industryEntity;
 }
