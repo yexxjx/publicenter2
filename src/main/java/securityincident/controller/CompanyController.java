@@ -20,7 +20,7 @@ public class CompanyController {
         return companyService.companyFindAll();
     }
 
-    // 기업 등록
+    // 기업 등록 { "companyName": "새로운 기업", "headOffice": "서울", "foundedYear": 2024, "industryIdName": "IT", "incidentCount": 0 }
     @PostMapping
     public boolean companyAdd(@RequestBody CompanyEntity companyEntity){
         return companyService.companyAdd(companyEntity);
