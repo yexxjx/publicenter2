@@ -24,7 +24,7 @@ public class CompanyEntity extends BaseTime{
     @Column(name = "incidentCount")
     private Integer incidentCount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="industryId")
+    @ManyToOne( cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    @JoinColumn(name="industryId", nullable = true)
     private IndustryEntity industryEntity;
 }
