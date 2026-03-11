@@ -11,13 +11,14 @@ import lombok.NoArgsConstructor;
 public class CompanyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int companyId;
+    @Column(name = "companyId")
+    private Integer companyId;
     private String companyName;
     private String headOffice;
-    private int foundedYear;
+    private Integer foundedYear;
     private String createdAt;
     private String industryIdName;
-    private int incidentCount;
+    private Integer incidentCount;
     private String lastDate;
 
     @ManyToOne

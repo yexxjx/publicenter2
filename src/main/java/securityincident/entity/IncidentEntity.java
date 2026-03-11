@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class IncidentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int incidentId;
+    private Integer incidentId;
     private String incidentYear;
     private String incidentDate;
     private String incidentType;
