@@ -12,5 +12,6 @@ public class IndustryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int industryId;
+    @Column(nullable = false , length = 50)
     private String industryName;
 }
