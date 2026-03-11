@@ -15,7 +15,6 @@ public class IncidentEntity extends BaseTime{
     private Integer incidentId;
     @Column( columnDefinition = "CHAR(4)")
     private String incidentYear;
-    private CreatedDate incidentDate;
     @Column(length = 50)
     private String incidentType;
     @Column( columnDefinition = "TEXT")
@@ -24,13 +23,12 @@ public class IncidentEntity extends BaseTime{
     private String actionTaken;
     @Column(length = 10)
     private String approvalStatus;
-    private CreatedDate approvalTime;
 
     @ManyToOne
     @JoinColumn(name="companyId")
     private CompanyEntity companyEntity;
 
     @ManyToOne
-    @JoinColumn(name="industryID")
+    @JoinColumn(name="industryId")
     private IndustryEntity industryEntity;
 }
