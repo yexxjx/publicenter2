@@ -8,6 +8,7 @@ import securityincident.repository.CompanyRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -37,6 +38,14 @@ public class CompanyService {
 
     // 기업 수정
     public boolean companyUpdate(CompanyEntity companyEntity){
+        Optional<CompanyEntity> optional=companyRepository.findById(companyEntity.getCompanyId());
+        if(optional.isPresent()){
+            CompanyEntity updateEntity=optional.get();
+            updateEntity.setCompanyId(companyEntity.getCompanyId());
+            updateEntity.setCompanyName(companyEntity.getCompanyName());
+            updateEntity.setHeadOffice(companyEntity.getHeadOffice());
+            updateEntity.setFoundedYear(companyEntity.getFoundedYear());
+        }
         return true;
     }
 
