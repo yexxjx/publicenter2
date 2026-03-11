@@ -5,20 +5,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 @AllArgsConstructor @NoArgsConstructor @Data @Builder
 @Entity @Table(name = "company")
-public class CompanyEntity {
-    @Id
+public class CompanyEntity extends BaseTime{
+    @Id @Column(name = "companyId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "companyId")
     private Integer companyId;
+    @Column(name = "companyName", length = 100, nullable = false)
     private String companyName;
+    @Column(name = "headOffice" , length = 100)
     private String headOffice;
+    @Column(name = "foundedYear")
     private Integer foundedYear;
-    private String createdAt;
+    @Column(name = "createdAt")
+    private CreatedDate createdAt;
+
+    @Column(name = "industryIdName")
     private String industryIdName;
+    @Column(name = "incidentCount")
     private Integer incidentCount;
+    @Column(name = "lastDate")
     private String lastDate;
 
     @ManyToOne

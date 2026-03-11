@@ -5,11 +5,26 @@ import org.springframework.web.bind.annotation.*;
 import securityincident.entity.CompanyEntity;
 import securityincident.service.CompanyService;
 
+import java.util.List;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/company")
 public class CompanyController {
     @Autowired
-    CompanyService companyService;
+    private CompanyService companyService;
+
+    // 기업 전체 조회
+    @GetMapping
+    public List<CompanyEntity> companayFindAll(){
+        return companyService.companayFindAll();
+    }
+
+    // 기업 등록
+    @PostMapping
+    public boolean companyAdd(@RequestBody CompanyEntity companyEntity){
+        return companyService.companyAdd(companyEntity);
+    }
 
     // 기업 수정
     @PutMapping
