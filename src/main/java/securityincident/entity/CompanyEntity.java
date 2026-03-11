@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 @AllArgsConstructor @NoArgsConstructor @Data @Builder
 @Entity @Table(name = "company")
