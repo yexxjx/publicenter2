@@ -19,15 +19,11 @@ public class CompanyEntity extends BaseTime{
     private String headOffice;
     @Column(name = "foundedYear")
     private Integer foundedYear;
-    @Column(name = "createdAt")
-    private CreatedDate createdAt;
 
     @Column(name = "industryIdName")
     private String industryIdName;
     @Column(name = "incidentCount")
     private Integer incidentCount;
-    @Column(name = "lastDate")
-    private String lastDate;
 
     @ManyToOne
     @JoinColumn(name="industryId")
